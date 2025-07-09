@@ -160,7 +160,7 @@
           6,
           15
         ],
-        "status": "in-progress"
+        "status": "done"
       },
       {
         "id": 17,
@@ -169,7 +169,8 @@
         "priority": "medium",
         "dependencies": [
           16
-        ]
+        ],
+        "status": "done"
       },
       {
         "id": 18,
@@ -178,7 +179,8 @@
         "priority": "medium",
         "dependencies": [
           17
-        ]
+        ],
+        "status": "done"
       },
       {
         "id": 19,
@@ -190,7 +192,8 @@
           12,
           15,
           18
-        ]
+        ],
+        "status": "in-progress"
       },
       {
         "id": 20,
@@ -220,7 +223,7 @@
       "lastUpdated": "2025-07-09T13:48:30.354Z",
       "created": "2025-07-09T14:05:00.069Z",
       "description": "Tasks for master context",
-      "updated": "2025-07-09T14:39:37.284Z"
+      "updated": "2025-07-09T14:41:39.288Z"
     }
   }
 }

@@ -5,6 +5,7 @@ import { setupSocket } from './socket';
 import { selectTasksStatus } from './features/tasks/tasksSlice';
 import KanbanBoard from './components/KanbanBoard';
 import DashboardOverview from './components/DashboardOverview';
+import DependencyGraph from './components/DependencyGraph';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <nav>
           <NavLink to="/">Kanban Board</NavLink>
           <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink to="/dependencies">Dependency Graph</NavLink>
         </nav>
         <div className="connection-status">
           Connection: <span className={`status-${status}`}>{status}</span>
@@ -30,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<KanbanBoard />} />
           <Route path="/dashboard" element={<DashboardOverview />} />
+          <Route path="/dependencies" element={<DependencyGraph />} />
         </Routes>
       </main>
     </Router>
