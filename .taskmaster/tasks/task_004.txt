@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: Frontend: Setup State Management and Real-time Connection
+# Status: pending
+# Dependencies: 1, 3
+# Priority: high
+# Description: Set up the frontend application structure, including routing, state management (Redux Toolkit), and integrate the WebSocket client to receive real-time updates from the backend.
+# Details:
+In the `frontend` directory, install `react-router-dom` (`npm install react-router-dom`) for view switching and `socket.io-client` (`npm install socket.io-client`). Install `@reduxjs/toolkit` and `react-redux` (`npm install @reduxjs/toolkit react-redux`). Configure a Redux store. Create a Redux slice for task data. Implement a WebSocket client that connects to the backend server URL. On receiving the `taskUpdate` event, dispatch an action to update the task data in the Redux store. Set up basic routing for different views (Kanban, Dashboard).
+
+# Test Strategy:
+Run both backend and frontend. Verify the frontend successfully connects to the WebSocket server. Modify the tasks.json file and confirm that the Redux store in the frontend is updated with the new data in real-time.

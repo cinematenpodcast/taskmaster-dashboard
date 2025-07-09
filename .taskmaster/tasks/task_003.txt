@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: Backend: Implement Real-time WebSocket Server
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Set up a WebSocket server in the backend to push real-time updates to the frontend whenever the tasks.json file changes.
+# Details:
+In the `backend` directory, install `socket.io` (`npm install socket.io`). Integrate Socket.io with the file monitoring service from Task 2. When a file change is detected and the data is successfully parsed, emit an event (e.g., `taskUpdate`) containing the new task data to all connected WebSocket clients. The server should listen on a specific port.
+
+# Test Strategy:
+Run the backend server. Use a simple WebSocket client (like a browser console or a test script) to connect to the server. Modify the tasks.json file and verify that the client receives the `taskUpdate` event with the correct data payload.

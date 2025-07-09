@@ -1,0 +1,147 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Set Up Backend Server",
+        "description": "Initialize a Node.js/Express backend server with TypeScript.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": []
+      },
+      {
+        "id": "2",
+        "title": "Set Up Frontend Project",
+        "description": "Initialize a React/Vite frontend with TypeScript.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["1"]
+      },
+      {
+        "id": "3",
+        "title": "Establish Real-time Communication",
+        "description": "Set up Socket.IO for real-time updates between frontend and backend.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["2"]
+      },
+      {
+        "id": "4",
+        "title": "Implement Zod Validation",
+        "description": "Integrate Zod for robust data validation on the backend.",
+        "status": "completed",
+        "priority": "medium",
+        "dependencies": ["1", "3"]
+      },
+      {
+        "id": "5",
+        "title": "Implement Client-Side Routing",
+        "description": "Set up react-router-dom for navigation between different views.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["2"]
+      },
+      {
+        "id": "6",
+        "title": "Create Redux Store",
+        "description": "Set up Redux Toolkit for state management on the frontend.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["2"]
+      },
+      {
+        "id": "7",
+        "title": "Design Task Card Component",
+        "description": "Create a reusable React component to display task information.",
+        "status": "completed",
+        "priority": "medium",
+        "dependencies": ["6"]
+      },
+      {
+        "id": "8",
+        "title": "Develop Kanban View",
+        "description": "Create a Kanban board view to display tasks by status.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["7"]
+      },
+      {
+        "id": "9",
+        "title": "Implement Task Details Modal",
+        "description": "Create a modal to show detailed information about a task.",
+        "status": "completed",
+        "priority": "medium",
+        "dependencies": ["7"]
+      },
+      {
+        "id": "10",
+        "title": "Integrate Headless UI",
+        "description": "Use Headless UI for accessible and unstyled modal/dialog components.",
+        "status": "completed",
+        "priority": "low",
+        "dependencies": ["2", "9"]
+      },
+      {
+        "id": "11",
+        "title": "Develop Dependency Graph View",
+        "description": "Create a view to visualize task dependencies using a graph.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["3", "6"]
+      },
+      {
+        "id": "12",
+        "title": "Develop Timeline View",
+        "description": "Create a view to display tasks in a chronological timeline.",
+        "status": "completed",
+        "priority": "medium",
+        "dependencies": ["7", "6"]
+      },
+      {
+        "id": "13",
+        "title": "Build Dashboard & Metrics View",
+        "description": "Create a main dashboard with charts and key metrics.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["6", "7", "8", "11"]
+      },
+      {
+        "id": "14",
+        "title": "Implement View Switching Logic",
+        "description": "Allow users to switch between Kanban, Graph, and Timeline views.",
+        "status": "in-progress",
+        "priority": "high",
+        "dependencies": ["5", "8"]
+      },
+      {
+        "id": "15",
+        "title": "Verify Real-time Updates",
+        "description": "Ensure all views update in real-time when task data changes.",
+        "status": "completed",
+        "priority": "high",
+        "dependencies": ["13"]
+      },
+      {
+        "id": "16",
+        "title": "Implement Responsive Design",
+        "description": "Ensure the dashboard is usable on different screen sizes.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": ["13", "5"]
+      },
+      {
+        "id": "17",
+        "title": "Final Testing & Bug Fixing",
+        "description": "Perform end-to-end testing and fix any remaining bugs.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": ["14", "16"]
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-08T11:14:09.033Z",
+      "updated": "2025-07-08T11:22:14.431Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

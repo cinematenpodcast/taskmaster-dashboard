@@ -1,0 +1,11 @@
+# Task ID: 9
+# Title: Frontend: Implement Dependency Visualization
+# Status: pending
+# Dependencies: 5, 8
+# Priority: medium
+# Description: Implement a visualization component to display dependency relationships between tasks, highlighting blocked tasks.
+# Details:
+Research and select a suitable graph visualization library for React, such as `react-flow-renderer` (`npm install react-flow-renderer`). Create a new view or integrate this visualization into the Dashboard view. Use the dependency data processed in Task 5 to generate nodes (tasks) and edges (dependencies) for the graph. Render the graph, showing directional connections. Implement visual highlighting for tasks whose dependencies are not yet completed (blocked tasks). Allow clicking nodes to potentially open the task details modal (reusing Task 8).
+
+# Test Strategy:
+Render the dependency visualization with mock data containing various dependency chains and cycles (if possible). Verify that tasks and dependencies are displayed correctly with direction. Check that blocked tasks are visually highlighted. Test interaction (e.g., clicking nodes).

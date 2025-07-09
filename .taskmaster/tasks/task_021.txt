@@ -1,0 +1,11 @@
+# Task ID: 21
+# Title: Test Responsive Design and Performance Optimizations
+# Status: pending
+# Dependencies: 10
+# Priority: medium
+# Description: Create comprehensive tests to verify the application's responsiveness across different devices and screen sizes, and evaluate its performance using browser tools.
+# Details:
+This task involves manual testing and using browser developer tools. Use browser developer tools' responsive mode or actual devices to simulate various screen sizes (mobile, tablet, desktop) and orientations. Navigate through all main views (Kanban, Dashboard, Dependency Visualization) and interact with components (open modal, filter, etc.) to ensure layouts adjust correctly, elements are visible and accessible, and interactions work as expected. Use browser performance tools (like Chrome's Lighthouse or Performance tab) to analyze loading times, rendering performance, and resource usage on key pages. Identify and report any significant performance bottlenecks or responsiveness issues found.
+
+# Test Strategy:
+1. Use browser developer tools to simulate common device screen sizes and orientations. 2. Manually test all major views (Kanban, Dashboard, Dependency Visualization) and interactive components (Task Details Modal) at different screen sizes, verifying layout integrity, element visibility, and touch/click interactions. 3. Run Lighthouse audits on key pages/views to assess performance metrics like loading speed and time to interactive. 4. Use the Performance tab in developer tools to record user flows and analyze rendering performance and resource usage. 5. Document all findings, including screenshots of responsiveness issues and performance report summaries.
