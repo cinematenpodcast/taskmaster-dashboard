@@ -19,6 +19,24 @@
   margin: 0;
 }
 
+.app-header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.app-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.app-header nav a:hover,
+.app-header nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .connection-status {
   font-size: 14px;
 }

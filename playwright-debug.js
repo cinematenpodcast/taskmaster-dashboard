@@ -17,15 +17,15 @@ const __dirname = path.dirname(__filename);
     });
 
     try {
-        console.log('Navigating to http://localhost:5173/ ...');
-        await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
+        console.log('Navigating to http://localhost:5173/dashboard ...');
+        await page.goto('http://localhost:5173/dashboard', { waitUntil: 'networkidle' });
 
-        // Check for Kanban board visibility
-        const kanbanBoard = await page.locator('#kanban-board');
-        if (await kanbanBoard.isVisible()) {
-            console.log('SUCCESS: Kanban board is visible.');
+        // Check for Dashboard overview visibility
+        const dashboardOverview = await page.locator('#dashboard-overview');
+        if (await dashboardOverview.isVisible()) {
+            console.log('SUCCESS: Dashboard overview is visible.');
         } else {
-            console.error('ERROR: Kanban board is NOT visible.');
+            console.error('ERROR: Dashboard overview is NOT visible.');
         }
 
     } catch (error) {
@@ -34,8 +34,8 @@ const __dirname = path.dirname(__filename);
         console.error(error.stack);
     } finally {
         console.log('Taking screenshot...');
-        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot.png') });
-        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot.png')}`);
+        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot-dashboard.png') });
+        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot-dashboard.png')}`);
         
         console.log('Closing browser...');
         await browser.close();
