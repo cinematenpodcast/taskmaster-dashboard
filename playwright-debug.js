@@ -1,33 +1,43 @@
 import { chromium } from 'playwright';
-import path from 'path';
 import { fileURLToPath } from 'url';
+import path from 'path';
 
-// Recreate __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 (async () => {
-  const browser = await chromium.launch({ headless: false });
-  const page = await browser.newPage();
+    const browser = await chromium.launch({ headless: true });
+    const page = await browser.newPage();
 
-  // Listen for all console events and log them to the terminal
-  page.on('console', msg => {
-    console.log(`[Browser Console]: ${msg.type().toUpperCase()} - ${msg.text()}`);
-  });
+    page.on('console', msg => {
+        const type = msg.type().toUpperCase();
+        if (type === 'LOG' || type === 'WARN' || type === 'ERROR' || type === 'DEBUG' || type === 'INFO') {
+            console.log(`[Browser Console]: ${type} - ${msg.text()}`);
+        }
+    });
 
-  try {
-    console.log('Navigating to http://localhost:5173/ ...');
-    await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
+    try {
+        console.log('Navigating to http://localhost:5173/ ...');
+        await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
 
-    console.log('Taking screenshot...');
-    const screenshotPath = path.join(__dirname, 'debug-screenshot.png');
-    await page.screenshot({ path: screenshotPath });
-    console.log(`Screenshot saved to ${screenshotPath}`);
+        // Check for Kanban board visibility
+        const kanbanBoard = await page.locator('#kanban-board');
+        if (await kanbanBoard.isVisible()) {
+            console.log('SUCCESS: Kanban board is visible.');
+        } else {
+            console.error('ERROR: Kanban board is NOT visible.');
+        }
 
-  } catch (error) {
-    console.error(`An error occurred: ${error.message}`);
-  } finally {
-    console.log('Closing browser...');
-    await browser.close();
-  }
+    } catch (error) {
+        console.error(`An error occurred: ${error.message}`);
+        console.error('Call log:');
+        console.error(error.stack);
+    } finally {
+        console.log('Taking screenshot...');
+        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot.png') });
+        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot.png')}`);
+        
+        console.log('Closing browser...');
+        await browser.close();
+    }
 })(); 

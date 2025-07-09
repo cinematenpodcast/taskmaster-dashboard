@@ -1,8 +1,43 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.app-header {
+  background-color: #026aa7;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.connection-status {
+  font-size: 14px;
+}
+
+.status-succeeded {
+  color: #61bd4f;
+}
+
+.status-loading {
+  color: #f2d600;
+}
+
+.status-failed {
+  color: #eb5a46;
+}
+
+main {
+  padding: 0;
+  margin: 0;
 }
 
 .logo {
