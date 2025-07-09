@@ -17,15 +17,24 @@ const __dirname = path.dirname(__filename);
     });
 
     try {
-        console.log('Navigating to http://localhost:5173/dashboard ...');
-        await page.goto('http://localhost:5173/dashboard', { waitUntil: 'networkidle' });
+        console.log('Navigating to http://localhost:5173/ ...');
+        await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
 
-        // Check for Dashboard overview visibility
-        const dashboardOverview = await page.locator('#dashboard-overview');
-        if (await dashboardOverview.isVisible()) {
-            console.log('SUCCESS: Dashboard overview is visible.');
+        // Click the first task
+        const firstTask = await page.locator('.kanban-task').first();
+        if (await firstTask.isVisible()) {
+            console.log('Clicking the first task...');
+            await firstTask.click();
+
+            // Check for Modal visibility
+            const modal = await page.locator('.modal-backdrop');
+            if (await modal.isVisible()) {
+                console.log('SUCCESS: Task details modal is visible.');
+            } else {
+                console.error('ERROR: Task details modal is NOT visible.');
+            }
         } else {
-            console.error('ERROR: Dashboard overview is NOT visible.');
+            console.error('ERROR: No tasks found to click.');
         }
 
     } catch (error) {
@@ -34,8 +43,8 @@ const __dirname = path.dirname(__filename);
         console.error(error.stack);
     } finally {
         console.log('Taking screenshot...');
-        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot-dashboard.png') });
-        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot-dashboard.png')}`);
+        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot-modal.png') });
+        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot-modal.png')}`);
         
         console.log('Closing browser...');
         await browser.close();

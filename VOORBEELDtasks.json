@@ -2,146 +2,223 @@
   "master": {
     "tasks": [
       {
-        "id": "1",
-        "title": "Set Up Backend Server",
-        "description": "Initialize a Node.js/Express backend server with TypeScript.",
-        "status": "completed",
+        "id": 1,
+        "title": "Project Setup and Repository Initialization",
+        "description": "Set up the monorepo structure for the project, including separate directories for the backend (Node.js) and frontend (React). Initialize Git, configure package managers (npm/yarn/pnpm), and set up basic build tools.",
         "priority": "high",
-        "dependencies": []
+        "dependencies": [],
+        "status": "done"
       },
       {
-        "id": "2",
-        "title": "Set Up Frontend Project",
-        "description": "Initialize a React/Vite frontend with TypeScript.",
-        "status": "completed",
+        "id": 2,
+        "title": "Backend: Implement File Monitoring and JSON Parsing",
+        "description": "Develop the backend service responsible for monitoring the specified tasks.json file for changes and parsing its content.",
         "priority": "high",
-        "dependencies": ["1"]
+        "dependencies": [
+          1
+        ],
+        "status": "done"
       },
       {
-        "id": "3",
-        "title": "Establish Real-time Communication",
-        "description": "Set up Socket.IO for real-time updates between frontend and backend.",
-        "status": "completed",
+        "id": 3,
+        "title": "Backend: Implement Real-time WebSocket Server",
+        "description": "Set up a WebSocket server in the backend to push real-time updates to the frontend whenever the tasks.json file changes.",
         "priority": "high",
-        "dependencies": ["2"]
+        "dependencies": [
+          2
+        ],
+        "status": "done"
       },
       {
-        "id": "4",
-        "title": "Implement Zod Validation",
-        "description": "Integrate Zod for robust data validation on the backend.",
-        "status": "completed",
+        "id": 4,
+        "title": "Create Remote Repository and Push Initial Codebase",
+        "description": "Create a new GitHub repository for the project and push the initial project structure, including the backend with real-time updates and the frontend setup.",
+        "priority": "high",
+        "dependencies": [
+          3
+        ],
+        "status": "done"
+      },
+      {
+        "id": 5,
+        "title": "Frontend: Setup State Management and Real-time Connection",
+        "description": "Set up the frontend application structure, including routing, state management (Redux Toolkit), and integrate the WebSocket client to receive real-time updates from the backend.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          3
+        ],
+        "status": "done"
+      },
+      {
+        "id": 6,
+        "title": "Frontend: Implement Data Processing and Metrics Calculation",
+        "description": "Implement the logic in the frontend to process the raw task data received from the backend, calculate metrics, and prepare data for different visualizations.",
         "priority": "medium",
-        "dependencies": ["1", "3"]
+        "dependencies": [
+          5
+        ],
+        "status": "done"
       },
       {
-        "id": "5",
-        "title": "Implement Client-Side Routing",
-        "description": "Set up react-router-dom for navigation between different views.",
-        "status": "completed",
+        "id": 7,
+        "title": "Frontend: Build Kanban Board View",
+        "description": "Build the Kanban board view component to display tasks organized by their status (Pending, In Progress, Completed, Cancelled) using color-coded indicators.",
         "priority": "high",
-        "dependencies": ["2"]
+        "dependencies": [
+          6
+        ],
+        "status": "done"
       },
       {
-        "id": "6",
-        "title": "Create Redux Store",
-        "description": "Set up Redux Toolkit for state management on the frontend.",
-        "status": "completed",
-        "priority": "high",
-        "dependencies": ["2"]
-      },
-      {
-        "id": "7",
-        "title": "Design Task Card Component",
-        "description": "Create a reusable React component to display task information.",
-        "status": "completed",
+        "id": 8,
+        "title": "Test Kanban Board View Implementation",
+        "description": "Test the Kanban Board View by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.",
         "priority": "medium",
-        "dependencies": ["6"]
+        "dependencies": [
+          7
+        ],
+        "status": "done"
       },
       {
-        "id": "8",
-        "title": "Develop Kanban View",
-        "description": "Create a Kanban board view to display tasks by status.",
-        "status": "completed",
-        "priority": "high",
-        "dependencies": ["7"]
-      },
-      {
-        "id": "9",
-        "title": "Implement Task Details Modal",
-        "description": "Create a modal to show detailed information about a task.",
-        "status": "completed",
+        "id": 9,
+        "title": "Commit Kanban Board View and Tests",
+        "description": "Commit the completed implementation and tests for the Kanban Board View to the local Git repository.",
         "priority": "medium",
-        "dependencies": ["7"]
+        "dependencies": [
+          8
+        ],
+        "status": "done"
       },
       {
-        "id": "10",
-        "title": "Integrate Headless UI",
-        "description": "Use Headless UI for accessible and unstyled modal/dialog components.",
-        "status": "completed",
-        "priority": "low",
-        "dependencies": ["2", "9"]
-      },
-      {
-        "id": "11",
-        "title": "Develop Dependency Graph View",
-        "description": "Create a view to visualize task dependencies using a graph.",
-        "status": "completed",
-        "priority": "high",
-        "dependencies": ["3", "6"]
-      },
-      {
-        "id": "12",
-        "title": "Develop Timeline View",
-        "description": "Create a view to display tasks in a chronological timeline.",
-        "status": "completed",
+        "id": 10,
+        "title": "Frontend: Build Dashboard Overview View",
+        "description": "Build the Dashboard Overview view component to display project metrics and statistics using cards and charts.",
         "priority": "medium",
-        "dependencies": ["7", "6"]
+        "dependencies": [
+          6
+        ],
+        "status": "done"
       },
       {
-        "id": "13",
-        "title": "Build Dashboard & Metrics View",
-        "description": "Create a main dashboard with charts and key metrics.",
-        "status": "completed",
-        "priority": "high",
-        "dependencies": ["6", "7", "8", "11"]
-      },
-      {
-        "id": "14",
-        "title": "Implement View Switching Logic",
-        "description": "Allow users to switch between Kanban, Graph, and Timeline views.",
-        "status": "in-progress",
-        "priority": "high",
-        "dependencies": ["5", "8"]
-      },
-      {
-        "id": "15",
-        "title": "Verify Real-time Updates",
-        "description": "Ensure all views update in real-time when task data changes.",
-        "status": "completed",
-        "priority": "high",
-        "dependencies": ["13"]
-      },
-      {
-        "id": "16",
-        "title": "Implement Responsive Design",
-        "description": "Ensure the dashboard is usable on different screen sizes.",
-        "status": "pending",
+        "id": 11,
+        "title": "Test Dashboard Overview View Implementation",
+        "description": "Test the Dashboard Overview View by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.",
         "priority": "medium",
-        "dependencies": ["13", "5"]
+        "dependencies": [
+          10
+        ],
+        "status": "done"
       },
       {
-        "id": "17",
-        "title": "Final Testing & Bug Fixing",
-        "description": "Perform end-to-end testing and fix any remaining bugs.",
-        "status": "pending",
+        "id": 12,
+        "title": "Commit Dashboard Overview View and Tests",
+        "description": "Commit the completed implementation and tests for the Dashboard Overview View to the local Git repository.",
+        "priority": "medium",
+        "dependencies": [
+          11
+        ],
+        "status": "done"
+      },
+      {
+        "id": 13,
+        "title": "Frontend: Implement Interactive Task Details Modal",
+        "description": "Implement the interactive task details modal/popup that appears when a task card is clicked, showing full task information and related tasks.",
         "priority": "high",
-        "dependencies": ["14", "16"]
+        "dependencies": [
+          9,
+          12
+        ],
+        "status": "done"
+      },
+      {
+        "id": 14,
+        "title": "Test Interactive Task Details Modal Implementation",
+        "description": "Test the Interactive Task Details Modal by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.",
+        "priority": "medium",
+        "dependencies": [
+          13
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Commit Interactive Task Details Modal and Tests",
+        "description": "Commit the completed implementation and tests for the Interactive Task Details Modal component to the local Git repository.",
+        "priority": "medium",
+        "dependencies": [
+          14
+        ],
+        "status": "done"
+      },
+      {
+        "id": 16,
+        "title": "Frontend: Implement Dependency Visualization",
+        "description": "Implement a visualization component to display dependency relationships between tasks, highlighting blocked tasks.",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          15
+        ]
+      },
+      {
+        "id": 17,
+        "title": "Test Dependency Visualization Implementation",
+        "description": "Test the Dependency Visualization by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.",
+        "priority": "medium",
+        "dependencies": [
+          16
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Commit Dependency Visualization and Tests",
+        "description": "Commit the completed implementation and tests for the Dependency Visualization to the local Git repository.",
+        "priority": "medium",
+        "dependencies": [
+          17
+        ]
+      },
+      {
+        "id": 19,
+        "title": "Frontend: Implement Responsive Design and Performance Optimizations",
+        "description": "Ensure the entire dashboard application is fully responsive across desktop, tablet, and mobile screen sizes and optimize performance.",
+        "priority": "medium",
+        "dependencies": [
+          9,
+          12,
+          15,
+          18
+        ]
+      },
+      {
+        "id": 20,
+        "title": "Test Responsive Design and Performance Optimizations",
+        "description": "Test the responsive design and performance by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.",
+        "priority": "medium",
+        "dependencies": [
+          19
+        ]
+      },
+      {
+        "id": 21,
+        "title": "Commit Responsive Design and Optimizations",
+        "description": "Commit the completed responsive design implementations, performance optimizations, and their corresponding tests to the repository.",
+        "priority": "medium",
+        "dependencies": [
+          20
+        ]
       }
     ],
     "metadata": {
-      "created": "2025-07-08T11:14:09.033Z",
-      "updated": "2025-07-08T11:22:14.431Z",
-      "description": "Tasks for master context"
+      "projectName": "Taskmaster_dashboard",
+      "projectDescription": "A modern, responsive web dashboard that automatically monitors tasks.json files and provides real-time visual updates of project status.",
+      "projectVersion": "0.1.0",
+      "author": "Yorrick Schoonheydt",
+      "creationDate": "2025-07-09T13:42:37.765Z",
+      "lastUpdated": "2025-07-09T13:48:30.354Z",
+      "created": "2025-07-09T14:05:00.069Z",
+      "description": "Tasks for master context",
+      "updated": "2025-07-09T14:37:07.454Z"
     }
   }
 }
