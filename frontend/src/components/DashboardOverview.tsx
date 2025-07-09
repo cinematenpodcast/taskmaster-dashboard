@@ -9,21 +9,15 @@ const DashboardOverview: React.FC = () => {
     const metrics = calculateMetrics(tasksData);
 
     return (
-        <div id="dashboard-overview" className="dashboard-overview">
-            <div className="metric-card">
-                <h3>Total Tasks</h3>
-                <p>{metrics.totalTasks}</p>
-            </div>
-            <div className="metric-card">
-                <h3>Completed Tasks</h3>
-                <p>{metrics.completedTasks}</p>
-            </div>
-            <div className="metric-card">
-                <h3>Pending Tasks</h3>
-                <p>{metrics.pendingTasks}</p>
-            </div>
+        <div className="dashboard-overview">
+            {Object.entries(metrics).map(([key, value]) => (
+                <div key={key} className="metric-card">
+                    <h3>{key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</h3>
+                    <p>{String(value)}</p>
+                </div>
+            ))}
         </div>
     );
 };
 
-export default DashboardOverview; 
+export default React.memo(DashboardOverview); 

@@ -193,7 +193,7 @@
           15,
           18
         ],
-        "status": "in-progress"
+        "status": "done"
       },
       {
         "id": 20,
@@ -202,7 +202,8 @@
         "priority": "medium",
         "dependencies": [
           19
-        ]
+        ],
+        "status": "done"
       },
       {
         "id": 21,
@@ -211,7 +212,8 @@
         "priority": "medium",
         "dependencies": [
           20
-        ]
+        ],
+        "status": "done"
       }
     ],
     "metadata": {
@@ -223,7 +225,7 @@
       "lastUpdated": "2025-07-09T13:48:30.354Z",
       "created": "2025-07-09T14:05:00.069Z",
       "description": "Tasks for master context",
-      "updated": "2025-07-09T14:41:39.288Z"
+      "updated": "2025-07-09T14:45:51.193Z"
     }
   }
 }

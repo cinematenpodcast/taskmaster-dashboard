@@ -42,4 +42,4 @@ const DependencyGraph: React.FC = () => {
     );
 };
 
-export default DependencyGraph; 
+export default React.memo(DependencyGraph); 
