@@ -1,11 +1,11 @@
 # Task ID: 17
-# Title: Test Interactive Task Details Modal Implementation
-# Status: pending
-# Dependencies: 4, 5, 6, 8
+# Title: Test Dependency Visualization Implementation
+# Status: done
+# Dependencies: 16
 # Priority: medium
-# Description: Create comprehensive tests for the Interactive Task Details Modal component to ensure it displays correct task information and handles interactions like dependency links.
+# Description: Test the Dependency Visualization by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.
 # Details:
-Write tests for the Interactive Task Details Modal component. Use mock task data covering various scenarios, including tasks with and without dependencies, long descriptions, and different statuses. Ensure the tests verify that the modal opens correctly when triggered (e.g., from a task card click), displays the correct task title, description, details, and test strategy. Verify that the dependencies section correctly lists prerequisite task IDs and that any interactive elements within the modal (like dependency links) behave as expected (e.g., navigating or logging). Test that the modal can be closed correctly (e.g., via a close button or clicking outside). Consider using React Testing Library to simulate user interactions and assert component rendering.
+
 
 # Test Strategy:
-1. Prepare mock task data including tasks with diverse details and dependency structures. 2. Render a component that triggers the modal (e.g., a TaskCard or the Kanban board). 3. Simulate clicking a task card to open the modal. 4. Verify the modal component is rendered and visible. 5. Assert that the modal displays the correct title, description, details, and test strategy for the selected task. 6. Verify that the dependencies list accurately reflects the task's dependencies from the mock data. 7. If dependency links are interactive, simulate clicking them and verify the intended behavior (e.g., console output, state change). 8. Simulate closing the modal (e.g., clicking a close button or pressing Escape) and verify it is no longer visible.
+

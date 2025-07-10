@@ -1,11 +1,11 @@
 # Task ID: 6
-# Title: Frontend: Build Kanban Board View
-# Status: pending
+# Title: Frontend: Implement Data Processing and Metrics Calculation
+# Status: done
 # Dependencies: 5
-# Priority: high
-# Description: Build the Kanban board view component to display tasks organized by their status (Pending, In Progress, Completed, Cancelled) using color-coded indicators.
+# Priority: medium
+# Description: Implement the logic in the frontend to process the raw task data received from the backend, calculate metrics, and prepare data for different visualizations.
 # Details:
-Create a React component for the Kanban board. Use Tailwind CSS for styling columns and task cards. Fetch task data grouped by status from the Redux store. Render columns for each status. Inside each column, map over the tasks and render a `TaskCard` component (to be created later). Apply color coding based on task status (Pending: Gray/Light Blue, In Progress: Yellow/Orange, Completed: Green, Cancelled: Red). Display ID, title, priority, status, and dependency count on each card.
+
 
 # Test Strategy:
-Render the Kanban board with mock data covering all statuses. Verify tasks appear in the correct columns and have the correct color coding. Check that basic task info (ID, title, etc.) is displayed on cards.
+

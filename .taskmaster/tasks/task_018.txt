@@ -1,11 +1,11 @@
 # Task ID: 18
-# Title: Commit Interactive Task Details Modal and Tests
-# Status: pending
-# Dependencies: 8, 17
+# Title: Commit Dependency Visualization and Tests
+# Status: done
+# Dependencies: 17
 # Priority: medium
-# Description: Commit the completed implementation and tests for the Interactive Task Details Modal component to the local Git repository.
+# Description: Commit the completed implementation and tests for the Dependency Visualization to the local Git repository.
 # Details:
-Stage all changes related to the Interactive Task Details Modal component (Task 8) and its corresponding tests (Task 17). Write a clear and concise commit message summarizing the changes, following project conventions (e.g., "feat: Implement Task Details Modal" or "test: Add tests for Task Details Modal"). Execute the `git commit` command. Ensure all relevant files (modal component files, test files, potentially updated dependencies or configuration) are included in the commit.
+
 
 # Test Strategy:
-After committing, run `git status` to confirm the working directory is clean. Use `git log` to inspect the commit history and verify that the new commit exists, has the correct message, and includes the expected files. Review the diff of the commit using `git show <commit_hash>` to ensure only the intended changes are part of this commit.
+

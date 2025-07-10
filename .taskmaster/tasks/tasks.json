@@ -214,6 +214,38 @@
           20
         ],
         "status": "done"
+      },
+      {
+        "id": 22,
+        "title": "Backend: Allow tasks.json path via CLI argument",
+        "description": "Modify the backend service to accept the path to the tasks.json file as a command-line argument.",
+        "details": "Implement command-line argument parsing in the backend entry point (e.g., server.js). Use a library like `yargs` or Node.js's built-in `process.argv` to define and parse an argument (e.g., `--tasks-path` or `-f`) that specifies the location of the tasks.json file. The backend should use this provided path for file monitoring (Task 2) and JSON parsing. If the argument is not provided, the backend should default to the current behavior (e.g., using `./tasks.json`). Ensure robust error handling for invalid or non-existent paths provided via the argument, logging appropriate messages and potentially falling back to the default path or exiting gracefully. Update the file watching and parsing logic to dynamically use the path obtained from the arguments.",
+        "testStrategy": "Run the backend server from the command line. Test without the argument to confirm it loads the default tasks.json. Create a test tasks.json file in a non-default location. Run the backend with the command-line argument specifying the path to the test file (e.g., `node server.js --tasks-path /path/to/test/tasks.json`). Verify that the backend successfully loads and parses the content of the specified file. Modify the test file while the server is running and confirm via a WebSocket client or logs that the backend detects changes and processes the correct file. Test with an invalid path to ensure error handling is correct.",
+        "status": "done",
+        "dependencies": [
+          2,
+          3
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 23,
+        "title": "Frontend: Refactor UI Layout to Full-Width",
+        "description": "Refactor the main application layout to be full-width and improve overall cleanliness and consistency of UI elements.",
+        "details": "This task involves modifying the main application container and layout components. The goal is to remove any fixed-width constraints, allowing the content to span the full width of the viewport (minus appropriate padding/margins). Review existing components (Kanban, Dashboard, Dependency Viz, Modals) to ensure they adapt correctly to the new layout. Pay attention to spacing, alignment, and consistency across different views. Consider using CSS Grid or Flexbox for the main layout structure. Ensure responsiveness is maintained or improved as part of this refactoring, building upon the work done in Task 19. Clean up any unused CSS or layout-related code.",
+        "testStrategy": "Manually test all main views (Dashboard, Kanban, Dependency Visualization) to ensure they render correctly and utilize the full width. Verify responsiveness by resizing the browser window and checking on different devices/simulators. Check for consistent spacing and alignment of elements across views. Use browser developer tools to inspect layout properties and ensure fixed-width constraints have been removed. Confirm no visual regressions were introduced in existing components.",
+        "status": "done",
+        "dependencies": [
+          5,
+          6,
+          7,
+          10,
+          16,
+          19
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
@@ -225,7 +257,7 @@
       "lastUpdated": "2025-07-09T13:48:30.354Z",
       "created": "2025-07-09T14:05:00.069Z",
       "description": "Tasks for master context",
-      "updated": "2025-07-09T14:45:51.193Z"
+      "updated": "2025-07-10T06:57:46.267Z"
     }
   }
 }

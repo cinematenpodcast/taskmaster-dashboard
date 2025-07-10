@@ -17,24 +17,26 @@ function App() {
 
   return (
     <Router>
-      <header className="app-header">
-        <h1>Taskmaster Dashboard</h1>
-        <nav>
-          <NavLink to="/">Kanban Board</NavLink>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/dependencies">Dependency Graph</NavLink>
-        </nav>
-        <div className="connection-status">
-          Connection: <span className={`status-${status}`}>{status}</span>
-        </div>
-      </header>
-      <main>
-        <Routes>
-          <Route path="/" element={<KanbanBoard />} />
-          <Route path="/dashboard" element={<DashboardOverview />} />
-          <Route path="/dependencies" element={<DependencyGraph />} />
-        </Routes>
-      </main>
+      <div className="app-container">
+        <header className="app-header">
+          <h1>Taskmaster Dashboard</h1>
+          <nav>
+            <NavLink to="/">Kanban Board</NavLink>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink to="/dependencies">Dependency Graph</NavLink>
+          </nav>
+          <div className="connection-status">
+            Connection: <span className={`status-${status}`}>{status}</span>
+          </div>
+        </header>
+        <main className="app-main">
+          <Routes>
+            <Route path="/" element={<KanbanBoard />} />
+            <Route path="/dashboard" element={<DashboardOverview />} />
+            <Route path="/dependencies" element={<DependencyGraph />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }

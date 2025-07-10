@@ -1,0 +1,11 @@
+# Task ID: 23
+# Title: Frontend: Refactor UI Layout to Full-Width
+# Status: pending
+# Dependencies: 5, 6, 7, 10, 16, 19
+# Priority: medium
+# Description: Refactor the main application layout to be full-width and improve overall cleanliness and consistency of UI elements.
+# Details:
+This task involves modifying the main application container and layout components. The goal is to remove any fixed-width constraints, allowing the content to span the full width of the viewport (minus appropriate padding/margins). Review existing components (Kanban, Dashboard, Dependency Viz, Modals) to ensure they adapt correctly to the new layout. Pay attention to spacing, alignment, and consistency across different views. Consider using CSS Grid or Flexbox for the main layout structure. Ensure responsiveness is maintained or improved as part of this refactoring, building upon the work done in Task 19. Clean up any unused CSS or layout-related code.
+
+# Test Strategy:
+Manually test all main views (Dashboard, Kanban, Dependency Visualization) to ensure they render correctly and utilize the full width. Verify responsiveness by resizing the browser window and checking on different devices/simulators. Check for consistent spacing and alignment of elements across views. Use browser developer tools to inspect layout properties and ensure fixed-width constraints have been removed. Confirm no visual regressions were introduced in existing components.

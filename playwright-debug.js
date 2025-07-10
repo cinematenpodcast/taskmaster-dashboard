@@ -7,10 +7,7 @@ const __dirname = path.dirname(__filename);
 
 (async () => {
     const browser = await chromium.launch({ headless: true });
-    const context = await browser.newContext({
-        viewport: { width: 375, height: 667 } // iPhone 6/7/8
-    });
-    const page = await context.newPage();
+    const page = await browser.newPage();
 
     page.on('console', msg => {
         const type = msg.type().toUpperCase();
@@ -23,14 +20,12 @@ const __dirname = path.dirname(__filename);
         console.log('Navigating to http://localhost:5173/ ...');
         await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
 
-        // Check the flex-direction of the kanban board
+        // Check for Kanban board visibility
         const kanbanBoard = await page.locator('#kanban-board');
-        const flexDirection = await kanbanBoard.evaluate(node => getComputedStyle(node).flexDirection);
-
-        if (flexDirection === 'column') {
-            console.log('SUCCESS: Kanban board has a column flex-direction on mobile.');
+        if (await kanbanBoard.isVisible()) {
+            console.log('SUCCESS: Kanban board is visible.');
         } else {
-            console.error(`ERROR: Kanban board has a flex-direction of ${flexDirection} on mobile.`);
+            console.error('ERROR: Kanban board is NOT visible.');
         }
 
     } catch (error) {
@@ -39,8 +34,8 @@ const __dirname = path.dirname(__filename);
         console.error(error.stack);
     } finally {
         console.log('Taking screenshot...');
-        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot-mobile.png') });
-        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot-mobile.png')}`);
+        await page.screenshot({ path: path.join(__dirname, 'debug-screenshot.png') });
+        console.log(`Screenshot saved to ${path.join(__dirname, 'debug-screenshot.png')}`);
         
         console.log('Closing browser...');
         await browser.close();

@@ -1,11 +1,11 @@
 # Task ID: 2
 # Title: Backend: Implement File Monitoring and JSON Parsing
-# Status: pending
+# Status: done
 # Dependencies: 1
 # Priority: high
 # Description: Develop the backend service responsible for monitoring the specified tasks.json file for changes and parsing its content.
 # Details:
-In the `backend` directory, install `chokidar` (`npm install chokidar`). Implement a service that takes a file path as input. Use `chokidar.watch(filePath)` to monitor the file. On `change` events, read the file content (`fs.readFile`), parse the JSON (`JSON.parse`), and validate the structure (check for `tasks` array, required fields like `id`, `title`, `status`, `dependencies` within tasks). Implement basic error handling for file read errors or malformed JSON. Store the parsed data in memory.
+
 
 # Test Strategy:
-Create a dummy tasks.json file. Start the backend service pointing to this file. Modify the file content and verify that the backend detects the change, reads, and parses the new data without errors. Test with valid and invalid JSON.
+

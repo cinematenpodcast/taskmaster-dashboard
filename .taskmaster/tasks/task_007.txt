@@ -1,11 +1,11 @@
 # Task ID: 7
-# Title: Frontend: Build Dashboard Overview View
-# Status: pending
-# Dependencies: 5
-# Priority: medium
-# Description: Build the Dashboard Overview view component to display project metrics and statistics using cards and charts.
+# Title: Frontend: Build Kanban Board View
+# Status: done
+# Dependencies: 6
+# Priority: high
+# Description: Build the Kanban board view component to display tasks organized by their status (Pending, In Progress, Completed, Cancelled) using color-coded indicators.
 # Details:
-Create a React component for the Dashboard overview. Use Tailwind CSS for a card-based layout. Display calculated metrics like completion percentage, task distribution by status, and priority distribution. Use a charting library like Chart.js (`npm install chart.js react-chartjs-2`) to visualize distributions (e.g., pie chart for status, bar chart for priority). Display key statistics in separate cards.
+
 
 # Test Strategy:
-Render the Dashboard view with mock data. Verify that calculated metrics are displayed correctly. Check that charts render and accurately represent the data distributions. Test responsiveness of the layout.
+

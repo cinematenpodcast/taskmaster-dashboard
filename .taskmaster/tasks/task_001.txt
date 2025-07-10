@@ -5,7 +5,7 @@
 # Priority: high
 # Description: Set up the monorepo structure for the project, including separate directories for the backend (Node.js) and frontend (React). Initialize Git, configure package managers (npm/yarn/pnpm), and set up basic build tools.
 # Details:
-Create a project root directory. Inside, create `backend` and `frontend` directories. In the root, initialize git (`git init`). In `backend`, initialize a Node.js project (`npm init -y`). In `frontend`, create a React app using Vite (`npm create vite@latest frontend --template react-ts`). Configure a monorepo tool like Lerna or npm/yarn/pnpm workspaces if needed, though simple separate projects might suffice initially. Add a root `.gitignore` file.
+
 
 # Test Strategy:
-Verify that both backend and frontend projects are created successfully, dependencies are installed, and basic scripts (e.g., `start`) are configured.
+

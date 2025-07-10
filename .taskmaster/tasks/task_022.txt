@@ -1,11 +1,11 @@
 # Task ID: 22
-# Title: Commit Responsive Design and Performance Optimizations
+# Title: Backend: Allow tasks.json path via CLI argument
 # Status: pending
-# Dependencies: 10, 21, 12
+# Dependencies: 2, 3
 # Priority: medium
-# Description: Commit the completed code and tests for the Responsive Design and Performance Optimizations feature to the repository.
+# Description: Modify the backend service to accept the path to the tasks.json file as a command-line argument.
 # Details:
-Create a new branch specifically for the Responsive Design and Performance Optimizations feature. Stage all changes related to the implementation (Task 10) and tests (Task 21). Write a clear and concise commit message summarizing the work done, referencing the feature. Commit the staged changes. Push the new branch to the remote repository established in Task 12. Prepare for creating a pull request.
+Implement command-line argument parsing in the backend entry point (e.g., server.js). Use a library like `yargs` or Node.js's built-in `process.argv` to define and parse an argument (e.g., `--tasks-path` or `-f`) that specifies the location of the tasks.json file. The backend should use this provided path for file monitoring (Task 2) and JSON parsing. If the argument is not provided, the backend should default to the current behavior (e.g., using `./tasks.json`). Ensure robust error handling for invalid or non-existent paths provided via the argument, logging appropriate messages and potentially falling back to the default path or exiting gracefully. Update the file watching and parsing logic to dynamically use the path obtained from the arguments.
 
 # Test Strategy:
-After pushing the branch, navigate to the remote repository on GitHub (or equivalent). Verify that the new branch exists and contains the committed changes for the Responsive Design and Performance Optimizations and its associated tests. Check the commit history to confirm the commit message and included files are correct.
+Run the backend server from the command line. Test without the argument to confirm it loads the default tasks.json. Create a test tasks.json file in a non-default location. Run the backend with the command-line argument specifying the path to the test file (e.g., `node server.js --tasks-path /path/to/test/tasks.json`). Verify that the backend successfully loads and parses the content of the specified file. Modify the test file while the server is running and confirm via a WebSocket client or logs that the backend detects changes and processes the correct file. Test with an invalid path to ensure error handling is correct.

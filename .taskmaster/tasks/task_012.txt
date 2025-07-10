@@ -1,11 +1,11 @@
 # Task ID: 12
-# Title: Create Remote Repository and Push Initial Codebase
-# Status: pending
-# Dependencies: 3
-# Priority: high
-# Description: Create a new GitHub repository for the project and push the initial project structure, including the backend with real-time updates and the frontend setup.
+# Title: Commit Dashboard Overview View and Tests
+# Status: done
+# Dependencies: 11
+# Priority: medium
+# Description: Commit the completed implementation and tests for the Dashboard Overview View to the local Git repository.
 # Details:
-Create a new, empty repository on GitHub (or your preferred Git hosting service). Do NOT initialize it with a README or license file, as the local repository already exists from initial setup. Once created, copy the remote URL provided by the hosting service. In the project's root directory, add the remote using the command `git remote add origin <remote_url>`. Verify the remote was added correctly using `git remote -v`. Finally, push the current state of the main branch (e.g., `main` or `master`) to the remote using `git push -u origin main` (replace `main` with your branch name if different). Ensure that the codebase includes the completed work from Task 3 (WebSocket server) and the initial frontend structure.
+
 
 # Test Strategy:
-After executing the git commands, navigate to the newly created GitHub repository in a web browser. Verify that all project files and directories (backend, frontend, root files like .gitignore) have been successfully pushed and are visible in the repository. Check that the commit history reflects the local history up to the point where Task 3's implementation was completed and committed. Confirm that the remote origin is correctly set in the local repository.
+

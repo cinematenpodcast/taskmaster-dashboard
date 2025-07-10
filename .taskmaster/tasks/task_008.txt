@@ -1,11 +1,11 @@
 # Task ID: 8
-# Title: Frontend: Implement Interactive Task Details Modal
-# Status: pending
-# Dependencies: 6, 7
-# Priority: high
-# Description: Implement the interactive task details modal/popup that appears when a task card is clicked, showing full task information and related tasks.
+# Title: Test Kanban Board View Implementation
+# Status: done
+# Dependencies: 7
+# Priority: medium
+# Description: Test the Kanban Board View by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.
 # Details:
-Create a reusable Modal component. Modify the `TaskCard` component (used in Kanban and potentially elsewhere) to handle click events. When clicked, open the Modal and pass the task ID. Inside the Modal, fetch the full task details from the Redux store. Display description, details, test strategy, subtasks (if applicable, though not explicitly in PRD structure, assume it's part of details or dependencies), and dependencies. Implement navigation links/buttons within the modal to jump to details of dependent or dependency tasks.
+
 
 # Test Strategy:
-Click on various task cards in the Kanban view. Verify that the modal opens with the correct task's full details. Check that dependency/dependent task links are present and functional (even if they just log the ID initially).
+

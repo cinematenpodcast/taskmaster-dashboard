@@ -1,11 +1,11 @@
 # Task ID: 15
-# Title: Test Dashboard Overview View Implementation
-# Status: pending
-# Dependencies: 4, 5, 7
+# Title: Commit Interactive Task Details Modal and Tests
+# Status: done
+# Dependencies: 14
 # Priority: medium
-# Description: Create comprehensive tests for the Dashboard Overview View component to ensure metrics, statistics, and charts are displayed correctly based on task data.
+# Description: Commit the completed implementation and tests for the Interactive Task Details Modal component to the local Git repository.
 # Details:
-Write tests for the Dashboard Overview View component. Use mock task data covering various scenarios (e.g., different numbers of tasks, different statuses, different priorities) to ensure accurate metric calculation and display. Verify that the component correctly renders cards for key statistics (completion percentage, total tasks, etc.). Check that charts (status distribution, priority distribution) render correctly and accurately reflect the mock data. Consider using testing libraries like React Testing Library or Jest.
+
 
 # Test Strategy:
-1. Prepare mock task data representing different project states. 2. Render the Dashboard Overview component using this mock data. 3. Use DOM queries to verify the presence and correct values of key metric cards (e.g., completion percentage, total tasks). 4. Verify that chart components are rendered. 5. If using a testing library that can interact with chart data (e.g., checking chart labels or data points), verify that the charts accurately represent the input mock data. 6. Test responsiveness by rendering with different viewport sizes in a testing environment or manually.
+

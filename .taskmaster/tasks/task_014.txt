@@ -1,11 +1,11 @@
 # Task ID: 14
-# Title: Commit Kanban Board View and Tests
-# Status: pending
-# Dependencies: 6, 13
+# Title: Test Interactive Task Details Modal Implementation
+# Status: done
+# Dependencies: 13
 # Priority: medium
-# Description: Commit the completed implementation and tests for the Kanban Board View to the local Git repository.
+# Description: Test the Interactive Task Details Modal by running the `playwright-debug.js` script. This will capture a screenshot and browser console output. A successful test is a correct screenshot with no console errors.
 # Details:
-Stage all changes related to the Kanban Board View component (Task 6) and its corresponding tests (Task 13). Write a clear and concise commit message summarizing the changes, following project conventions (e.g., "feat: Implement Kanban Board View" or "test: Add tests for Kanban Board"). Execute the `git commit` command. Ensure all relevant files (component files, test files, potentially updated dependencies or configuration) are included in the commit.
+
 
 # Test Strategy:
-After committing, run `git status` to confirm the working directory is clean. Use `git log` to inspect the commit history and verify that the new commit exists, has the correct message, and includes the expected files. Review the diff of the commit using `git show <commit_hash>` to ensure only the intended changes were included.
+

@@ -1,11 +1,11 @@
 # Task ID: 5
-# Title: Frontend: Implement Data Processing and Metrics Calculation
-# Status: pending
-# Dependencies: 4
-# Priority: medium
-# Description: Implement the logic in the frontend to process the raw task data received from the backend, calculate metrics, and prepare data for different visualizations.
+# Title: Frontend: Setup State Management and Real-time Connection
+# Status: done
+# Dependencies: 1, 3
+# Priority: high
+# Description: Set up the frontend application structure, including routing, state management (Redux Toolkit), and integrate the WebSocket client to receive real-time updates from the backend.
 # Details:
-Within the Redux slice or using selectors, implement functions to: 1. Calculate completion percentages (completed tasks / total tasks). 2. Group tasks by status for the Kanban view. 3. Calculate status distribution statistics. 4. Identify blocked tasks based on dependencies. 5. Prepare data structure suitable for dependency visualization (nodes and edges). Ensure data validation and error handling for unexpected data structures.
+
 
 # Test Strategy:
-Use mock task data with various statuses, dependencies, and structures. Verify that the data processing logic correctly calculates metrics, groups tasks, and identifies blocked tasks. Write unit tests for these data processing functions.
+
